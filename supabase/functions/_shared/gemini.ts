@@ -19,6 +19,7 @@ export const extractDataWithGemini = async (
         base64file = await file.arrayBuffer().then((buffer) =>
             Buffer.from(buffer).toString("base64")
         );
+        
     } catch (error) {
         throw new Error(
             "Error al leer el archivo: " + (error as Error).message,

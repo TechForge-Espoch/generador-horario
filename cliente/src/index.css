@@ -1,68 +1,574 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.menu {
+  background-color: crimson;
+  margin-bottom: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  display: block;
+  color: white;
+  padding: 20px;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.menu li {
+  text-decoration: none;
+}
+
+.menu ul {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  list-style: none;
+  text-decoration: none;
+  justify-content: space-between;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.menu a.selected {
+  background-color: blueviolet;
 }
 
-button {
+.menu2 ul {
+  margin-top: 20px;
+  list-style: none;
+  text-decoration: none;
+}
+
+.menu2 li {
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.menu2 a {
+  text-decoration: none;
+
+  color: white;
+  font-weight: bold;
+  background-color: blueviolet;
+  padding: 10px;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Título principal */
+.title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  padding: 15px;
+  background: #f4f4f4;
   border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  margin-bottom: 20px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* Lista de mallas curriculares */
+.malla-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Elementos de la lista */
+.malla-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-bottom: 1px solid #ddd;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Hover sobre el elemento */
+.malla-item:hover {
+  background: #f9f9f9;
+}
+
+/* Nombre de la carrera */
+.carrera-nombre {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Estilo del enlace */
+.malla-link {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Hover del enlace */
+.malla-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Contenedor principal */
+.title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-left: 15px;
+}
+
+/* Menú de botones */
+.menu2 ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  justify-content: left;
+}
+
+/* Botones del menú */
+.menu-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #6a0dad; /* Color morado */
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Efecto hover */
+.menu-button:hover {
+  background: #500a86;
+  transform: scale(1.05);
+}
+
+/* Espaciado entre botones */
+.menu2 li {
+  margin: 0;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Etiquetas */
+label {
+  font-weight: bold;
+}
+
+/* Estilo de los select */
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: white;
+}
+
+/* Fieldset y legend */
+fieldset {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+legend {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Contenedor de cada materia */
+.materia-container {
+  margin-bottom: 15px;
+}
+
+/* Radio buttons alineados */
+.radio-label {
+  display: block;
+  margin-left: 10px;
+  font-size: 1rem;
+}
+
+.radio-label label {
+  font-weight: normal;
+}
+
+/* Estilo del botón de enviar */
+.submit-button {
+  padding: 12px 20px;
+  background: #6a0dad;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.submit-button:hover {
+  background: #500a86;
+}
+
+.form-container {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Fieldset y legend */
+fieldset {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  background: white;
+}
+
+legend {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Materias */
+.materia-container {
+  margin-bottom: 10px;
+}
+
+/* Nombre de la materia (sin negrita excesiva) */
+.materia-container h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+/* Radio buttons alineados */
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: normal;
+  color: #555;
+  padding: 5px 0;
+}
+
+/* Mejor estilo para los inputs tipo radio */
+input[type="radio"] {
+  accent-color: #6a0dad; /* Color morado para los radios */
+  transform: scale(1.1);
+}
+
+/* Botón de envío */
+.submit-button {
+  padding: 12px 20px;
+  background: #6a0dad;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background: #500a86;
+}
+
+/* Facultad */
+.facultad {
+  background: #f4f4f4;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Título de la facultad */
+.facultad h2 {
+  font-size: 1.5rem;
+  color: #6a0dad;
+  border-bottom: 2px solid #6a0dad;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+/* Carrera */
+.carrera {
+  background: #ffffff;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+/* Título de la carrera */
+.carrera h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Lista de materias */
+.carrera ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Materias */
+.carrera li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+/* Código de materia */
+.codigo {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.facultad ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Elemento de carrera */
+.facultad li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+/* Código de facultad */
+.codigo {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Lista de facultades */
+.facultad-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* Elemento de facultad */
+.facultad-item {
+  font-size: 1.2rem;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+input[type="number"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: white;
+}
+
+/* Estilo del botón */
+.submit-button {
+  padding: 12px 20px;
+  background: #6a0dad;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Botón deshabilitado */
+.submit-button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+/* Mensaje de error */
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-top: -10px;
+}
+
+/* Botón deshabilitado */
+.submit-button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.submit-button {
+  padding: 12px 20px;
+  background: #6a0dad;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Estilo de los inputs */
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  background: white;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Sección de cada horario */
+.horario-section {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablas */
+.horario-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+/* Encabezados */
+.horario-table th {
+  background: #6a0dad;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Celdas */
+.horario-table td,
+.horario-table th {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Mensaje de carga */
+.loading {
+  color: #6a0dad;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+/* Contenedor de Materias */
+.materia-container {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Lista de Materias */
+.materia-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Elemento de Materia */
+.materia-container li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+/* Código de Materia */
+.codigo {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.horario-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.horario-table th {
+  background: #6a0dad;
+  color: white;
+  padding: 10px;
+}
+
+.horario-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.horario-hora {
+  background: #4b0082;
+  color: white;
+  font-weight: bold;
+}
+
+.horario-celda {
+  font-weight: bold;
+  color: #333;
+}
+
+.materia {
+  background: #f4f4f4;
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
 }
